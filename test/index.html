@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purdey's Brew - Café & Restaurant</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="apple-touch-icon" href="/assets/logo-192.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1a0d0d',
+                            card: '#241010',
+                            gold: '#d4af37',
+                            lightGold: '#f3e5ab',
+                            accent: '#8b0000',
+                            cream: '#fdfbf7'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(to bottom right, #bf953f, #fcf6ba, #aa771c) 1;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-cream font-sans antialiased selection:bg-brand-gold selection:text-brand-dark">
+
+    <!-- TOP BAR -->
+    <div class="bg-black/80 text-brand-lightGold text-xs py-2 px-4 border-b border-brand-gold/20">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> Café & Restaurant, United Kingdom</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-brand-gold mr-1.5"></i> Open Daily: 8:00 AM - 5:00 PM</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:01234567890" class="hover:text-white transition"><i class="fa-solid fa-phone text-brand-gold mr-1"></i> Call Us</a>
+                <a href="#contact" class="hover:text-white transition"><i class="fa-solid fa-envelope text-brand-gold mr-1"></i> Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gold/30 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="/assets/logo-192.png" alt="Purdey's Brew logo" width="48" height="48" class="w-12 h-12 rounded-full shadow-md bg-black">
+                <div>
+                    <span class="font-serif font-bold text-xl tracking-wider gold-gradient-text block leading-none">PURDEY'S BREW</span>
+                    <span class="text-[10px] tracking-[0.25em] text-brand-lightGold uppercase block mt-1">Café & Restaurant</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="text-brand-gold hover:text-brand-lightGold transition">Home</a>
+                <a href="#menu" class="hover:text-brand-gold transition">Menu</a>
+                <a href="#about" class="hover:text-brand-gold transition">About Us</a>
+                <a href="#allergies" class="hover:text-brand-gold transition">Allergies</a>
+                <a href="#contact" class="hover:text-brand-gold transition">Location</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="https://www.just-eat.co.uk" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transition transform hover:scale-105">
+                    <i class="fa-solid fa-bag-shopping"></i> Order on Just Eat
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-brand-gold text-2xl focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block text-brand-gold font-medium py-1">Home</a>
+            <a href="#menu" class="block hover:text-brand-gold font-medium py-1">Menu</a>
+            <a href="#about" class="block hover:text-brand-gold font-medium py-1">About Us</a>
+            <a href="#allergies" class="block hover:text-brand-gold font-medium py-1">Allergies</a>
+            <a href="#contact" class="block hover:text-brand-gold font-medium py-1">Location</a>
+            <div class="pt-2">
+                <a href="https://www.just-eat.co.uk" target="_blank" rel="noopener noreferrer" class="block text-center bg-gradient-to-r from-orange-600 to-red-600 text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-bag-shopping mr-2"></i> Order on Just Eat
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="home" class="relative bg-gradient-to-b from-brand-card to-brand-dark py-20 lg:py-32 px-4 text-center overflow-hidden border-b border-brand-gold/20">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <picture>
+                <source srcset="/assets/logo-512.webp" type="image/webp">
+                <img src="/assets/logo-512.png" alt="Purdey's Brew Café & Restaurant" width="256" height="256" class="w-48 h-48 md:w-64 md:h-64 mx-auto rounded-full shadow-2xl shadow-black/60 bg-black mb-8">
+            </picture>
+
+            <div class="inline-block border border-brand-gold/40 px-6 py-2 rounded-full mb-6 bg-brand-dark/80 backdrop-blur">
+                <span class="text-brand-lightGold text-xs uppercase tracking-[0.3em] font-semibold">Coffee • Breakfast • Lunch</span>
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-wide mb-6 gold-gradient-text">
+                PURDEY'S BREW
+            </h1>
+            <p class="font-serif italic text-xl sm:text-2xl text-brand-lightGold mb-8">Café & Restaurant</p>
+            
+            <p class="max-w-2xl mx-auto text-brand-cream/80 text-sm sm:text-base leading-relaxed mb-10">
+                Explore our full view-only menu featuring traditional English breakfasts, value meal deals, hot/cold sandwiches, chef specials, and refreshing drinks.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#menu" class="bg-brand-gold hover:bg-brand-lightGold text-brand-dark px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest shadow-xl transition transform hover:scale-105">
+                    Browse Menu
+                </a>
+                <a href="https://www.just-eat.co.uk" target="_blank" rel="noopener noreferrer" class="bg-orange-600 hover:bg-orange-500 text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-widest shadow-xl transition transform hover:scale-105 flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping"></i> Order on Just Eat
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-bold block mb-2">Discover Our Offerings</span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text mb-4">Our Complete Menu</h2>
+            <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+            <p class="text-brand-cream/70 text-sm mt-4">View our full selection of freshly prepared meals, drinks, and daily specials.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Breakfast Set Menu -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Set Menu</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Breakfast Set Menu</h3>
+                        </div>
+                        <span class="text-lg font-bold text-brand-gold bg-brand-dark px-3 py-1 rounded-lg border border-brand-gold/40">£6.95</span>
+                    </div>
+                    <ul class="space-y-4 text-sm text-brand-cream/90">
+                        <li class="border-b border-brand-gold/10 pb-3">
+                            <span class="font-bold text-white block mb-1">Classic English Breakfast Set</span>
+                            <p class="text-xs text-brand-cream/70">Toasted brown or white bread with butter, jumbo sausage, bacon, hash brown, poached egg, baked beans, roasted tomato and mushroom, served with a hot drink.</p>
+                        </li>
+                        <li class="border-b border-brand-gold/10 pb-3">
+                            <span class="font-bold text-white block mb-1">Breakfast Sandwich Set</span>
+                            <p class="text-xs text-brand-cream/70">Sandwich (egg or tuna), jumbo sausage, bacon, baked beans, hash brown, poached egg, roasted tomato and mushroom, served with a hot drink.</p>
+                        </li>
+                        <li class="border-b border-brand-gold/10 pb-3">
+                            <span class="font-bold text-white block mb-1">Vegetable Breakfast Set</span>
+                            <p class="text-xs text-brand-cream/70">Toasted brown or white bread with butter, vegetable sausage, hash brown, poached egg, baked beans, roasted tomato and mushroom, served with a hot drink.</p>
+                        </li>
+                        <li>
+                            <span class="font-bold text-white block mb-1">Fresh Salad Breakfast Set</span>
+                            <p class="text-xs text-brand-cream/70">Chicken or tuna with lettuce, cucumber, gherkins, green olives, sweetcorn, carrots, tomatoes and salad dressing, served with a drink.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Meal Deals -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Combo Deals</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Meal Deals</h3>
+                        </div>
+                        <span class="text-lg font-bold text-brand-gold bg-brand-dark px-3 py-1 rounded-lg border border-brand-gold/40">£4.95</span>
+                    </div>
+                    <p class="text-[11px] text-brand-lightGold italic mb-4">All meals are served with fries and a standard can drink.</p>
+                    <ul class="space-y-3 text-sm text-brand-cream/90">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Doner Kebab Meal (Lamb)</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Chicken Burger Meal</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Beef Burger Meal</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Chicken Wrap Meal (Spicy or Normal)</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>2-Piece Chicken Wings Meal</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Fish Burger Meal</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i><span>Fish and Chips Meal</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Chef's Special -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Traditional Home Style</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Chef's Special</h3>
+                        </div>
+                        <span class="text-lg font-bold text-brand-gold bg-brand-dark px-3 py-1 rounded-lg border border-brand-gold/40">£8.95</span>
+                    </div>
+                    <p class="text-[11px] text-brand-lightGold italic mb-4">Day Special - One item available per day and only for lunch. Please call to find out what we have for the day.</p>
+                    <ul class="space-y-4 text-sm text-brand-cream/90">
+                        <li class="border-b border-brand-gold/10 pb-3">
+                            <span class="font-bold text-white block mb-1">Pilau Rice with Roast Chicken</span>
+                            <p class="text-xs text-brand-cream/70">Served with fresh salad and mint sauce.</p>
+                        </li>
+                        <li class="border-b border-brand-gold/10 pb-3">
+                            <span class="font-bold text-white block mb-1">Authentic Biryani (Chicken or Lamb)</span>
+                            <p class="text-xs text-brand-cream/70">Served with tarka dal or raita (cucumber or onion) and fresh salad.</p>
+                        </li>
+                        <li>
+                            <span class="font-bold text-white block mb-1">Chicken or Lamb Curry</span>
+                            <p class="text-xs text-brand-cream/70">Served with pilau rice or chips or two parathas and fresh salad.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hot or Cold Sandwiches -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Freshly Prepared</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Hot or Cold Sandwiches</h3>
+                        </div>
+                        <span class="text-lg font-bold text-brand-gold bg-brand-dark px-3 py-1 rounded-lg border border-brand-gold/40">£3.25</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 text-sm text-brand-cream/90">
+                        <ul class="space-y-2">
+                            <li>• Sausage</li>
+                            <li>• Egg</li>
+                            <li>• Egg and Bacon</li>
+                            <li>• Bacon and Sausage</li>
+                            <li>• Egg and Mushroom</li>
+                            <li>• Egg and Sausage</li>
+                            <li>• Egg, Sausage & Tomato</li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li>• Tuna Mayonnaise</li>
+                            <li>• Egg Mayonnaise</li>
+                            <li>• Cheese & Tomato</li>
+                            <li>• Tuna & Sweetcorn</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Café Special -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Café Favorites</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Café Special</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-brand-cream/90">
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2">
+                            <span>Freshly Baked Cake & Hot Drink</span>
+                            <span class="font-bold text-brand-gold">£3.95</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2">
+                            <span>Baked Jacket Potato (Served with baked beans)</span>
+                            <span class="font-bold text-brand-gold">£4.95</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2">
+                            <span>Panini (Chicken or Tuna)</span>
+                            <span class="font-bold text-brand-gold">£3.95</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2">
+                            <span>Baguette (Sausage or Tuna or Egg)</span>
+                            <span class="font-bold text-brand-gold">£3.95</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2">
+                            <span>Spinach & Mushroom Scrambled Eggs</span>
+                            <span class="font-bold text-brand-gold">£4.95</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Omelettes (Plain/Cheese/Onion/Spinach)</span>
+                            <span class="font-bold text-brand-gold">£4.95</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Snacks -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Quick Bites</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Snacks</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-brand-cream/90">
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Kebab Roll (Lamb or Chicken)</span><span class="font-bold text-brand-gold">£2.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>2 Kebabs (Lamb or Chicken)</span><span class="font-bold text-brand-gold">£2.45</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Chicken Popcorn (Medium)</span><span class="font-bold text-brand-gold">£2.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>3 Chicken Tenders</span><span class="font-bold text-brand-gold">£2.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>3 Chicken Wings</span><span class="font-bold text-brand-gold">£2.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>3 Samosas (Lamb, Chicken or Veg)</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>3 Fish Fingers / 3 Hash Browns</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Protein Power (2 Boiled Eggs)</span><span class="font-bold text-brand-gold">£1.45</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>2 Toast with Butter / Spread</span><span class="font-bold text-brand-gold">£1.45 - £1.75</span></li>
+                        <li class="flex justify-between"><span>2 Toast with Toppings (Poached/Beans)</span><span class="font-bold text-brand-gold">£3.75</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Hot Drinks -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Warm & Cozy</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Hot Drinks</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 text-sm text-brand-cream/90">
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2"><span>Latte</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2"><span>Cappuccino</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between items-center border-b border-brand-gold/10 pb-2"><span>Mocha / Americano / Espresso</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between items-center"><span>Tea (English Tea or Green Tea)</span><span class="font-bold text-brand-gold">£1.45</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Cold & Soft Drinks -->
+            <div class="bg-brand-card rounded-2xl p-6 border border-brand-gold/30 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start border-b border-brand-gold/20 pb-4 mb-4">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-widest text-brand-lightGold font-bold">Refreshments</span>
+                            <h3 class="font-serif text-xl font-bold text-brand-gold">Cold & Soft Drinks</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-xs text-brand-cream/90">
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Standard Soft Drinks Can</span><span class="font-bold text-brand-gold">£1.45</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Juice / Bottled Drinks (500ml)</span><span class="font-bold text-brand-gold">£1.45</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>Lucozade / Red Bull / Monster Energy</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between border-b border-brand-gold/10 pb-1.5"><span>J20</span><span class="font-bold text-brand-gold">£1.95</span></li>
+                        <li class="flex justify-between"><span>Still Water (500ml)</span><span class="font-bold text-brand-gold">£1.00</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ALLERGY NOTICE -->
+    <section id="allergies" class="py-12 bg-brand-card border-y border-brand-gold/30 px-4">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8">
+            <div class="text-brand-gold text-5xl">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="flex-1 text-center md:text-left">
+                <h3 class="font-serif text-2xl font-bold text-brand-gold mb-2">Food Allergy Notice</h3>
+                <p class="text-brand-cream/80 text-sm leading-relaxed">
+                    If you have any food allergies or special dietary requirements, please inform our team before placing your order. Some menu items may contain allergenic ingredients.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 text-xs font-bold text-brand-lightGold">
+                <span class="bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30">Gluten</span>
+                <span class="bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30">Milk</span>
+                <span class="bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30">Eggs</span>
+                <span class="bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30">Nuts</span>
+                <span class="bg-brand-dark px-3 py-1.5 rounded-full border border-brand-gold/30">Soya</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto text-center">
+        <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-bold block mb-2">Our Story</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text mb-6">Welcome to Purdey's Brew</h2>
+        <p class="text-brand-cream/80 text-base leading-relaxed mb-8">
+            Located in the heart of the community, Purdey's Brew Café & Restaurant is dedicated to serving freshly brewed artisan coffees, hearty traditional English breakfasts, and authentic homestyle lunch specials. Whether you are grabbing a quick morning espresso or sitting down for a relaxing meal, our warm ambiance and friendly service ensure a wonderful dining experience.
+        </p>
+        <div class="inline-flex items-center gap-2 bg-brand-card px-6 py-3 rounded-full border border-brand-gold/40 text-brand-lightGold text-sm">
+            <i class="fa-solid fa-star text-brand-gold"></i> Quality Ingredients • Freshly Prepared Daily • Warm Hospitality
+        </div>
+    </section>
+
+    <!-- CONTACT & MAP SECTION -->
+    <section id="contact" class="py-20 bg-brand-card border-t border-brand-gold/30 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-brand-gold text-xs uppercase tracking-[0.3em] font-bold block mb-2">Find Us</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text mb-6">Visit Our Café & Restaurant</h2>
+                <p class="text-brand-cream/80 text-sm mb-8 leading-relaxed">
+                    Drop by to enjoy our delicious breakfast menus and coffee blends, or order online directly through Just Eat for quick delivery right to your door.
+                </p>
+                <div class="space-y-4 text-sm text-brand-cream/90">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-dark border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold block text-white">Location</span>
+                            <span class="text-brand-cream/70 text-xs">United Kingdom</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-brand-dark border border-brand-gold/40 flex items-center justify-center text-brand-gold shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold block text-white">Opening Hours</span>
+                            <span class="text-brand-cream/70 text-xs">Monday – Sunday: 8:00 AM – 5:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="https://www.just-eat.co.uk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white px-8 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider shadow-xl transition transform hover:scale-105">
+                        <i class="fa-solid fa-bag-shopping"></i> Order on Just Eat
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full h-[400px] rounded-2xl overflow-hidden border-2 border-brand-gold/40 shadow-2xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.298516029584!2d-0.1277583842298638!3d51.50735077963577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDMwJzI2LjUiTiAwwKw3JzM5LjkiVw!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 px-4 border-t border-brand-gold/30 text-center text-xs text-brand-cream/60">
+        <div class="max-w-7xl mx-auto flex flex-col items-center gap-6">
+            <img src="/assets/logo-192.png" alt="" width="80" height="80" class="w-20 h-20 rounded-full bg-black">
+            <span class="font-serif font-bold text-lg gold-gradient-text">PURDEY'S BREW CAFÉ & RESTAURANT</span>
+            <div class="flex flex-wrap justify-center gap-6 text-brand-cream/80 font-medium">
+                <a href="#home" class="hover:text-brand-gold transition">Home</a>
+                <a href="#menu" class="hover:text-brand-gold transition">Menu</a>
+                <a href="#about" class="hover:text-brand-gold transition">About</a>
+                <a href="#contact" class="hover:text-brand-gold transition">Location</a>
+                <a href="https://www.just-eat.co.uk" target="_blank" rel="noopener noreferrer" class="hover:text-brand-gold transition">Order on Just Eat</a>
+            </div>
+            <p class="mt-4">&copy; 2026 Purdey's Brew Café & Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
